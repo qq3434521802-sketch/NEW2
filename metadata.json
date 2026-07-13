@@ -1,0 +1,6 @@
+{
+  "name": "今天吃什么",
+  "description": "极简、现代、高级的今天吃什么随机选择器，支持自定义食物列表和本地保存。",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

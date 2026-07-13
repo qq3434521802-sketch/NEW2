@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "HarmonyOS Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --color-brand-bg: #F7F7F7;
+  --color-brand-card: rgba(255, 255, 255, 0.85);
+  --color-brand-text: #222222;
+  --color-brand-muted: #888888;
+  --color-brand-btn: #111111;
+  --color-brand-btn-text: #FFFFFF;
+  --color-brand-success: #4CAF50;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-bg);
+    color: var(--color-brand-text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Glassmorphism custom enhancements matching the theme precisely */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
+}
+
+/* Custom background glow orbs as specified in the theme */
+.bg-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(17, 17, 17, 0.03) 0%, rgba(247, 247, 247, 0) 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bg-glow-bottom {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.03) 0%, rgba(247, 247, 247, 0) 70%);
+  bottom: -100px;
+  right: -100px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Scale-up animation from the design template */
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-up {
+  animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+/* Custom Webkit scrollbar for the menu tags container */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+
